@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Repaso 1.º ESO: Atmósfera e Hidrosfera</title>
+  <style>
+    :root {
+      --primary: #0284c7; --primary-dark: #0369a1; --secondary: #0d9488;
+      --bg: #f0f9ff; --card: #ffffff; --text: #1e293b; --muted: #64748b;
+      --success: #16a34a; --error: #dc2626;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
+    body { background: var(--bg); color: var(--text); padding: 16px; line-height: 1.5; }
+    .container { max-width: 720px; margin: 0 auto; }
+    header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 24px; border-radius: 16px; text-align: center; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2); }
+    header h1 { font-size: 1.5rem; margin-bottom: 6px; }
+    .tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+    .tab-btn { flex: 1; padding: 12px; border: none; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer; background: white; color: var(--primary); box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
+    .tab-btn.active { background: var(--primary); color: white; }
+    .section { display: none; }
+    .section.active { display: block; }
+    .card { background: var(--card); border-radius: 14px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .card h2 { color: var(--primary-dark); font-size: 1.2rem; margin-bottom: 12px; border-bottom: 2px solid #e0f2fe; padding-bottom: 6px; }
+    .badge { display: inline-block; background: #e0f2fe; color: var(--primary-dark); padding: 2px 8px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; }
+    .layers { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+    .layer-item { padding: 10px 14px; border-radius: 10px; background: #f8fafc; border-left: 4px solid var(--primary); }
+    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.95rem; }
+    th, td { text-align: left; padding: 10px; border-bottom: 1px solid #e2e8f0; }
+    th { background: #f1f5f9; color: var(--primary-dark); }
+    .question-card { background: white; border-radius: 14px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+    .options { display: flex; flex-direction: column; gap: 8px; }
+    .option-btn { text-align: left; padding: 12px 14px; border: 2px solid #e2e8f0; border-radius: 10px; background: #f8fafc; cursor: pointer; font-size: 0.95rem; }
+    .option-btn:hover:not(:disabled) { border-color: var(--primary); background: #f0f9ff; }
+    .option-btn.correct { background: #dcfce7; border-color: var(--success); color: #14532d; font-weight: 600; }
+    .option-btn.wrong { background: #fee2e2; border-color: var(--error); color: #7f1d1d; }
+    .feedback { margin-top: 10px; font-size: 0.9font-weight: 500; display: none; }
+    .score-box { background: white; padding: 20px; border-radius: 14px; text-align: center; margin-top: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .score-num { font-size: 2rem; font-weight: 800; color: var(--primary); }
+    .reset-btn { margin-top: 12px; padding: 10px 20px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>🌍 La Atmósfera y la Hidrosfera</h1>
+    <p>Ficha de repaso y test interactivo · Biología y Geología (1.º ESO)</p>
+  </header>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="showTab('apuntes', this)">📖 Ficha de Estudio</button>
+    <button class="tab-btn" onclick="showTab('test', this)">🧠 Test Interactivo</button>
+  </div>
+  <div id="apuntes" class="section active">
+    <div class="card">
+      <h2>☁️ 1. La Atmósfera</h2>
+      <p><strong>Concepto:</strong> Capa gaseosa que envuelve la Tierra, regula la temperatura y protege de las radiaciones.</p>
+      <ul>
+        <li><span class="badge">N₂ (78 %)</span> Nitrógeno</li>
+        <li><span class="badge">O₂ (21 %)</span> Oxígeno</li>
+        <li><span class="badge">Otros (1 %)</span> CO₂, vapor de agua y ozono</li>
+      </ul>
+      <div class="layers">
+        <div class="layer-item"><strong>Exosfera:</strong> Satélites artificiales.</div>
+        <div class="layer-item"><strong>Ionosfera:</strong> Auroras boreales y ondas de radio.</div>
+        <div class="layer-item"><strong>Mesosfera:</strong> Desintegración de meteoritos.</div>
+        <div class="layer-item"><strong>Estratosfera:</strong> Capa de ozono (filtra UV).</div>
+        <div class="layer-item"><strong>Troposfera:</strong> Fenómenos meteorológicos y vida.</div>
+      </div>
+    </div>
+    <div class="card">
+      <h2>💧 2. El Agua y la Hidrosfera</h2>
+      <ul>
+        <li><strong>Propiedades:</strong> Disolvente, regulador térmico y anomalía de densidad (el hielo flota).</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h2>📊 3. Distribución del Agua</h2>
+      <table>
+        <tr><th>Tipo</th><th>Detalle</th></tr>
+        <tr><td><span class="badge">Salada</span></td><td>97 % (Océanos y mares)</td></tr>
+        <tr><td><span class="badge">Dulce</span></td><td>3 % (Glaciares, ríos, lagos y acuíferos)</td></tr>
+      </table>
+    </div>
+  </div>
+  <div id="test" class="section">
+    <div id="quiz-container"></div>
+    <div class="score-box">
+      <div>Puntuación actual</div>
+      <div class="score-num" id="score-display">0 / 8</div>
+      <button class="reset-btn" onclick="initQuiz()">🔄 Reiniciar Test</button>
+    </div>
+  </div>
+</div>
+<script>
+  const questions = [
+    { q: "1. ¿Gas más abundante de la atmósfera?", options: ["Oxígeno", "Nitrógeno (78 %)", "CO₂"], answer: 1, explanation: "El nitrógeno representa el 78 %." },
+    { q: "2. ¿Capa de ozono?", options: ["Troposfera", "Estratosfera", "Exosfera"], answer: 1, explanation: "Está en la Estratosfera." },
+    { q: "3. ¿Fenómenos meteorológicos?", options: ["Troposfera", "Mesosfera", "Ionosfera"], answer: 0, explanation: "Ocurren en la Troposfera." },
+    { q: "4. ¿Estrellas fugaces / meteoritos?", options: ["Exosfera", "Estratosfera", "Mesosfera"], answer: 2, explanation: "Se desintegran en la Mesosfera." },
+    { q: "5. ¿Por qué flota el hielo?", options: ["Disolvente", "Anomalía de la densidad", "Regulador"], answer: 1, explanation: "Por la anomalía de la densidad." },
+    { q: "6. ¿Porcentaje de agua dulce?", options: ["97 %", "50 %", "3 %"], answer: 2, explanation: "Solo el 3 % es agua dulce." },
+    { q: "7. ¿Mayor reserva de agua dulce?", options: ["Ríos", "Glaciares y casquetes", "Atmósfera"], answer: 1, explanation: "Está en los glaciares." },
+    { q: "8. ¿Fase que forma las nubes?", options: ["Evaporación", "Condensación", "Escorrentía"], answer: 1, explanation: "La condensación forma nubes." }
+  ];
+  let score = 0;
+  function showTab(tabId, btn) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    btn.classList.add('active');
+  }
+  function initQuiz() {
+    score = 0;
+    document.getElementById('score-display').textContent = `0 / ${questions.length}`;
+    const container = document.getElementById('quiz-container');
+    container.innerHTML = '';
+    questions.forEach((item) => {
+      const card = document.createElement('div');
+      card.className = 'question-card';
+      card.innerHTML = `<h3>${item.q}</h3>`;
+      const optsDiv = document.createElement('div');
+      optsDiv.className = 'options';
+      const feedback = document.createElement('div');
+      feedback.className = 'feedback';
+      item.options.forEach((optText, optIndex) => {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.textContent = optText;
+        btn.onclick = () => {
+          const allBtns = optsDiv.querySelectorAll('.option-btn');
+          allBtns.forEach(b => b.disabled = true);
+          if (optIndex === item.answer) {
+            btn.classList.add('correct');
+            score++;
+            document.getElementById('score-display').textContent = `${score} / ${questions.length}`;
+            feedback.style.color = 'var(--success)';
+            feedback.textContent = item.explanation;
+          } else {
+            btn.classList.add('wrong');
+            allBtns[item.answer].classList.add('correct');
+            feedback.style.color = 'var(--error)';
+            feedback.textContent = `Incorrecto. ${item.explanation}`;
+          }
+          feedback.style.display = 'block';
+        };
+        optsDiv.appendChild(btn);
+      });
+      card.appendChild(optsDiv);
+      card.appendChild(feedback);
+      container.appendChild(card);
+    });
+  }
+  initQuiz();
+</script>
+</body>
+</html>
