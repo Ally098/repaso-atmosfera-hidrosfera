@@ -1,156 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Repaso 1.º ESO: Atmósfera e Hidrosfera</title>
-  <style>
-    :root {
-      --primary: #0284c7; --primary-dark: #0369a1; --secondary: #0d9488;
-      --bg: #f0f9ff; --card: #ffffff; --text: #1e293b; --muted: #64748b;
-      --success: #16a34a; --error: #dc2626;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; }
-    body { background: var(--bg); color: var(--text); padding: 16px; line-height: 1.5; }
-    .container { max-width: 720px; margin: 0 auto; }
-    header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 24px; border-radius: 16px; text-align: center; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.2); }
-    header h1 { font-size: 1.5rem; margin-bottom: 6px; }
-    .tabs { display: flex; gap: 10px; margin-bottom: 20px; }
-    .tab-btn { flex: 1; padding: 12px; border: none; border-radius: 12px; font-size: 1rem; font-weight: 600; cursor: pointer; background: white; color: var(--primary); box-shadow: 0 2px 6px rgba(0,0,0,0.06); }
-    .tab-btn.active { background: var(--primary); color: white; }
-    .section { display: none; }
-    .section.active { display: block; }
-    .card { background: var(--card); border-radius: 14px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .card h2 { color: var(--primary-dark); font-size: 1.2rem; margin-bottom: 12px; border-bottom: 2px solid #e0f2fe; padding-bottom: 6px; }
-    .badge { display: inline-block; background: #e0f2fe; color: var(--primary-dark); padding: 2px 8px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; }
-    .layers { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
-    .layer-item { padding: 10px 14px; border-radius: 10px; background: #f8fafc; border-left: 4px solid var(--primary); }
-    table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.95rem; }
-    th, td { text-align: left; padding: 10px; border-bottom: 1px solid #e2e8f0; }
-    th { background: #f1f5f9; color: var(--primary-dark); }
-    .question-card { background: white; border-radius: 14px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
-    .options { display: flex; flex-direction: column; gap: 8px; }
-    .option-btn { text-align: left; padding: 12px 14px; border: 2px solid #e2e8f0; border-radius: 10px; background: #f8fafc; cursor: pointer; font-size: 0.95rem; }
-    .option-btn:hover:not(:disabled) { border-color: var(--primary); background: #f0f9ff; }
-    .option-btn.correct { background: #dcfce7; border-color: var(--success); color: #14532d; font-weight: 600; }
-    .option-btn.wrong { background: #fee2e2; border-color: var(--error); color: #7f1d1d; }
-    .feedback { margin-top: 10px; font-size: 0.9font-weight: 500; display: none; }
-    .score-box { background: white; padding: 20px; border-radius: 14px; text-align: center; margin-top: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .score-num { font-size: 2rem; font-weight: 800; color: var(--primary); }
-    .reset-btn { margin-top: 12px; padding: 10px 20px; background: var(--secondary); color: white; border: none; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; }
-  </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Repaso 1.º ESO: Atmósfera e Hidrosfera</title>
+<style>
+:root{--p:#0284c7;--pd:#0369a1;--s:#0d9488;--bg:#f0f9ff;--t:#1e293b;--ok:#16a34a;--err:#dc2626}
+*{box-sizing:border-box;margin:0;padding:0;font-family:system-ui,sans-serif}
+body{background:var(--bg);color:var(--t);padding:14px;line-height:1.5}
+.c{max-width:720px;margin:auto}
+header{background:linear-gradient(135deg,var(--p),var(--s));color:#fff;padding:20px;border-radius:16px;text-align:center;margin-bottom:16px}
+.tabs{display:flex;gap:8px;margin-bottom:16px}
+.tb{flex:1;padding:12px;border:none;border-radius:12px;font-weight:700;cursor:pointer;background:#fff;color:var(--p);box-shadow:0 2px 5px rgba(0,0,0,.06)}
+.tb.active{background:var(--p);color:#fff}
+.sec{display:none}.sec.active{display:block}
+.card{background:#fff;border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+h2{color:var(--pd);font-size:1.15rem;margin-bottom:10px;border-bottom:2px solid #e0f2fe;padding-bottom:4px}
+h3{font-size:1rem;margin:10px 0 6px;color:var(--pd)}
+ul{margin-left:18px;margin-bottom:8px}
+.bg{display:inline-block;background:#e0f2fe;color:var(--pd);padding:2px 7px;border-radius:6px;font-weight:700;font-size:.85rem}
+.ly{padding:8px 12px;border-radius:8px;background:#f8fafc;border-left:4px solid var(--p);margin-bottom:6px}
+table{width:100%;border-collapse:collapse;margin-top:8px;font-size:.9rem}
+th,td{text-align:left;padding:8px;border-bottom:1px solid #e2e8f0}
+th{background:#f1f5f9;color:var(--pd)}
+.opts{display:flex;flex-direction:column;gap:8px;margin-top:8px}
+.ob{text-align:left;padding:10px 12px;border:2px solid #e2e8f0;border-radius:10px;background:#f8fafc;cursor:pointer;font-size:.95rem}
+.ob.ok{background:#dcfce7;border-color:var(--ok);color:#14532d;font-weight:700}
+.ob.err{background:#fee2e2;border-color:var(--err);color:#7f1d1d}
+.fb{margin-top:8px;font-size:.9rem;font-weight:600;display:none}
+.sb{background:#fff;padding:18px;border-radius:14px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,.08)}
+.sn{font-size:2rem;font-weight:800;color:var(--p)}
+.rb{margin-top:10px;padding:10px 18px;background:var(--s);color:#fff;border:none;border-radius:10px;font-weight:700;cursor:pointer}
+</style>
 </head>
 <body>
-<div class="container">
-  <header>
-    <h1>🌍 La Atmósfera y la Hidrosfera</h1>
-    <p>Ficha de repaso y test interactivo · Biología y Geología (1.º ESO)</p>
-  </header>
-  <div class="tabs">
-    <button class="tab-btn active" onclick="showTab('apuntes', this)">📖 Ficha de Estudio</button>
-    <button class="tab-btn" onclick="showTab('test', this)">🧠 Test Interactivo</button>
-  </div>
-  <div id="apuntes" class="section active">
-    <div class="card">
-      <h2>☁️ 1. La Atmósfera</h2>
-      <p><strong>Concepto:</strong> Capa gaseosa que envuelve la Tierra, regula la temperatura y protege de las radiaciones.</p>
-      <ul>
-        <li><span class="badge">N₂ (78 %)</span> Nitrógeno</li>
-        <li><span class="badge">O₂ (21 %)</span> Oxígeno</li>
-        <li><span class="badge">Otros (1 %)</span> CO₂, vapor de agua y ozono</li>
-      </ul>
-      <div class="layers">
-        <div class="layer-item"><strong>Exosfera:</strong> Satélites artificiales.</div>
-        <div class="layer-item"><strong>Ionosfera:</strong> Auroras boreales y ondas de radio.</div>
-        <div class="layer-item"><strong>Mesosfera:</strong> Desintegración de meteoritos.</div>
-        <div class="layer-item"><strong>Estratosfera:</strong> Capa de ozono (filtra UV).</div>
-        <div class="layer-item"><strong>Troposfera:</strong> Fenómenos meteorológicos y vida.</div>
-      </div>
-    </div>
-    <div class="card">
-      <h2>💧 2. El Agua y la Hidrosfera</h2>
-      <ul>
-        <li><strong>Propiedades:</strong> Disolvente, regulador térmico y anomalía de densidad (el hielo flota).</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h2>📊 3. Distribución del Agua</h2>
-      <table>
-        <tr><th>Tipo</th><th>Detalle</th></tr>
-        <tr><td><span class="badge">Salada</span></td><td>97 % (Océanos y mares)</td></tr>
-        <tr><td><span class="badge">Dulce</span></td><td>3 % (Glaciares, ríos, lagos y acuíferos)</td></tr>
-      </table>
-    </div>
-  </div>
-  <div id="test" class="section">
-    <div id="quiz-container"></div>
-    <div class="score-box">
-      <div>Puntuación actual</div>
-      <div class="score-num" id="score-display">0 / 8</div>
-      <button class="reset-btn" onclick="initQuiz()">🔄 Reiniciar Test</button>
-    </div>
-  </div>
+<div class="c">
+<header><h1>🌍 La Atmósfera y la Hidrosfera</h1><p>Ficha de repaso y test · Biología y Geología (1.º ESO)</p></header>
+<div class="tabs">
+<button class="tb active" onclick="st('ap',this)">📖 Ficha de Estudio</button>
+<button class="tb" onclick="st('ts',this)">🧠 Test Interactivo (12)</button>
+</div>
+<div id="ap" class="sec active">
+<div class="card">
+<h2>☁️ 1. La Atmósfera y Fenómenos Atmosféricos</h2>
+<p>Capa gaseosa que envuelve la Tierra. Formada por partículas en suspensión y gases: <span class="bg">N₂ 78%</span> <span class="bg">O₂ 21%</span> <span class="bg">Otros (CO₂, vapor) 1%</span></p>
+<h3>Capas (de arriba abajo)</h3>
+<div class="ly"><strong>1. Exosfera:</strong> Satélites artificiales.</div>
+<div class="ly"><strong>2. Ionosfera:</strong> Auroras boreales y ondas de radio.</div>
+<div class="ly"><strong>3. Mesosfera:</strong> Capa más fría; desintegra meteoritos.</div>
+<div class="ly"><strong>4. Estratosfera:</strong> Capa de ozono (filtra rayos UV).</div>
+<div class="ly"><strong>5. Troposfera:</strong> Vida y fenómenos atmosféricos.</div>
+<h3>⚡ Fenómenos Atmosféricos (en la Troposfera)</h3>
+<ul>
+<li><strong>Precipitaciones:</strong> Lluvia, nieve y granizo (por condensación del vapor).</li>
+<li><strong>Viento:</strong> Movimiento del aire por diferencias de temperatura y presión.</li>
+<li><strong>Eléctricos y luminosos:</strong> Rayos, truenos, relámpagos y arcoíris.</li>
+</ul>
+</div>
+<div class="card">
+<h2>💧 2. El Agua y la Hidrosfera</h2>
+<p>Conjunto de toda el agua de la Tierra. <strong>Propiedades:</strong> Gran disolvente, regulador térmico y anomalía de la densidad (el hielo flota).</p>
+</div>
+<div class="card">
+<h2>📊 3. Distribución del Agua (Libro 1.º ESO)</h2>
+<table>
+<tr><th>Categoría</th><th>Porcentaje y Detalle</th></tr>
+<tr><td><span class="bg">Agua Total</span></td><td><strong>97,5 %</strong> Océanos (salada) · <strong>2,5 %</strong> Agua dulce</td></tr>
+<tr><td><span class="bg">Agua Dulce (2,5%)</span></td><td><strong>68,7 %</strong> Glaciares · <strong>30,1 %</strong> Aguas subterráneas · <strong>0,8 %</strong> Permafrost (suelo congelado) · <strong>0,4 %</strong> Superficial y atmósfera</td></tr>
+<tr><td><span class="bg">Superficial (0,4%)</span></td><td><strong>67,4 %</strong> Lagos · <strong>12,2 %</strong> Humedad suelo · <strong>9,5 %</strong> Atmósfera · <strong>8,5 %</strong> Humedales · <strong>1,6 %</strong> Ríos · <strong>0,8 %</strong> Seres vivos</td></tr>
+</table>
+</div>
+<div class="card">
+<h2>🔄 4. El Ciclo del Agua y sus Motores</h2>
+<p><strong>Motores del ciclo:</strong> La <strong>energía del Sol</strong> (calienta y evapora el agua) y la <strong>fuerza de la gravedad</strong> (hace caer la lluvia y fluir los ríos hacia el mar).</p>
+<ul>
+<li><strong>Fases:</strong> 1. Evaporación → 2. Condensación → 3. Precipitación → 4. Escorrentía e infiltración.</li>
+</ul>
+</div>
+</div>
+<div id="ts" class="sec">
+<div id="qc"></div>
+<div class="sb"><div>Puntuación</div><div class="sn" id="sd">0 / 12</div><button class="rb" onclick="iq()">🔄 Reiniciar Test</button></div>
+</div>
 </div>
 <script>
-  const questions = [
-    { q: "1. ¿Gas más abundante de la atmósfera?", options: ["Oxígeno", "Nitrógeno (78 %)", "CO₂"], answer: 1, explanation: "El nitrógeno representa el 78 %." },
-    { q: "2. ¿Capa de ozono?", options: ["Troposfera", "Estratosfera", "Exosfera"], answer: 1, explanation: "Está en la Estratosfera." },
-    { q: "3. ¿Fenómenos meteorológicos?", options: ["Troposfera", "Mesosfera", "Ionosfera"], answer: 0, explanation: "Ocurren en la Troposfera." },
-    { q: "4. ¿Estrellas fugaces / meteoritos?", options: ["Exosfera", "Estratosfera", "Mesosfera"], answer: 2, explanation: "Se desintegran en la Mesosfera." },
-    { q: "5. ¿Por qué flota el hielo?", options: ["Disolvente", "Anomalía de la densidad", "Regulador"], answer: 1, explanation: "Por la anomalía de la densidad." },
-    { q: "6. ¿Porcentaje de agua dulce?", options: ["97 %", "50 %", "3 %"], answer: 2, explanation: "Solo el 3 % es agua dulce." },
-    { q: "7. ¿Mayor reserva de agua dulce?", options: ["Ríos", "Glaciares y casquetes", "Atmósfera"], answer: 1, explanation: "Está en los glaciares." },
-    { q: "8. ¿Fase que forma las nubes?", options: ["Evaporación", "Condensación", "Escorrentía"], answer: 1, explanation: "La condensación forma nubes." }
-  ];
-  let score = 0;
-  function showTab(tabId, btn) {
-    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    document.getElementById(tabId).classList.add('active');
-    btn.classList.add('active');
-  }
-  function initQuiz() {
-    score = 0;
-    document.getElementById('score-display').textContent = `0 / ${questions.length}`;
-    const container = document.getElementById('quiz-container');
-    container.innerHTML = '';
-    questions.forEach((item) => {
-      const card = document.createElement('div');
-      card.className = 'question-card';
-      card.innerHTML = `<h3>${item.q}</h3>`;
-      const optsDiv = document.createElement('div');
-      optsDiv.className = 'options';
-      const feedback = document.createElement('div');
-      feedback.className = 'feedback';
-      item.options.forEach((optText, optIndex) => {
-        const btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.textContent = optText;
-        btn.onclick = () => {
-          const allBtns = optsDiv.querySelectorAll('.option-btn');
-          allBtns.forEach(b => b.disabled = true);
-          if (optIndex === item.answer) {
-            btn.classList.add('correct');
-            score++;
-            document.getElementById('score-display').textContent = `${score} / ${questions.length}`;
-            feedback.style.color = 'var(--success)';
-            feedback.textContent = item.explanation;
-          } else {
-            btn.classList.add('wrong');
-            allBtns[item.answer].classList.add('correct');
-            feedback.style.color = 'var(--error)';
-            feedback.textContent = `Incorrecto. ${item.explanation}`;
-          }
-          feedback.style.display = 'block';
-        };
-        optsDiv.appendChild(btn);
-      });
-      card.appendChild(optsDiv);
-      card.appendChild(feedback);
-      container.appendChild(card);
-    });
-  }
-  initQuiz();
+const qs=[
+{q:"1. ¿Qué porcentaje del agua total es agua dulce?",o:["97,5 %","2,5 %","68,7 %"],a:1,e:"Solo el 2,5 % del agua de la Tierra es dulce; el 97,5 % es salada."},
+{q:"2. ¿Dónde está la mayor parte del agua dulce (68,7 %)?",o:["En los ríos","En los glaciares","En los lagos"],a:1,e:"El 68,7 % del agua dulce está congelada en los glaciares."},
+{q:"3. ¿Qué es el permafrost (0,8 % del agua dulce)?",o:["Agua de las nubes","Agua congelada en el suelo de zonas muy frías","Agua de los océanos"],a:1,e:"Es la capa de suelo que permanece congelada en regiones muy frías."},
+{q:"4. ¿Qué porcentaje de agua dulce es superficial y atmosférica?",o:["Solo el 0,4 %","El 30,1 %","El 50 %"],a:0,e:"Solo el 0,4 % del agua dulce está disponible en superficie y atmósfera."},
+{q:"5. Dentro del agua superficial (0,4 %), ¿dónde hay mayor porcentaje?",o:["En los ríos (1,6 %)","En los lagos de agua dulce (67,4 %)","En seres vivos (0,8 %)"],a:1,e:"Los lagos representan el 67,4 % del agua superficial y atmosférica."},
+{q:"6. ¿Cuáles son los dos motores del ciclo del agua?",o:["El viento y las mareas","La energía del Sol y la fuerza de la gravedad","La capa de ozono y la luna"],a:1,e:"El Sol aporta energía para evaporar y la gravedad hace caer y fluir el agua."},
+{q:"7. ¿En qué capa ocurren los fenómenos atmosféricos?",o:["Estratosfera","Mesosfera","Troposfera"],a:2,e:"La lluvia, el viento o los rayos ocurren en la Troposfera."},
+{q:"8. ¿Qué fenómeno atmosférico se produce por diferencia de presión y temperatura?",o:["El viento","El arcoíris","El granizo"],a:0,e:"El viento es el desplazamiento del aire entre zonas de distinta presión."},
+{q:"9. ¿Dónde se encuentra la capa de ozono?",o:["Exosfera","Estratosfera","Ionosfera"],a:1,e:"Está en la Estratosfera y nos protege de los rayos UV."},
+{q:"10. ¿Cuál es el gas más abundante de la atmósfera?",o:["Oxígeno (21 %)","Nitrógeno (78 %)","CO₂ (1 %)"],a:1,e:"El Nitrógeno (N₂) supone el 78 % de la atmósfera."},
+{q:"11. ¿Por qué flota el hielo sobre el agua líquida?",o:["Por ser gran disolvente","Por la anomalía de la densidad","Por la gravedad"],a:1,e:"Al congelarse aumenta su volumen y disminuye su densidad."},
+{q:"12. ¿Qué fase del ciclo del agua forma las nubes?",o:["Evaporación","Condensación","Infiltración"],a:1,e:"El vapor se enfría y condensa formando gotitas en las nubes."}
+];
+let sc=0;
+function st(id,b){document.querySelectorAll('.sec').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.tb').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');b.classList.add('active')}
+function iq(){sc=0;document.getElementById('sd').textContent='0 / 12';const c=document.getElementById('qc');c.innerHTML='';qs.forEach(i=>{const d=document.createElement('div');d.className='card';d.innerHTML=`<h3>${i.q}</h3>`;const od=document.createElement('div');od.className='opts';const fb=document.createElement('div');fb.className='fb';i.o.forEach((t,x)=>{const b=document.createElement('button');b.className='ob';b.textContent=t;b.onclick=()=>{od.querySelectorAll('.ob').forEach(k=>k.disabled=true);if(x===i.a){b.classList.add('ok');sc++;document.getElementById('sd').textContent=`${sc} / 12`;fb.style.color='var(--ok)';fb.textContent='✅ '+i.e}else{b.classList.add('err');od.querySelectorAll('.ob')[i.a].classList.add('ok');fb.style.color='var(--err)';fb.textContent='❌ '+i.e}fb.style.display='block'};od.appendChild(b)});d.appendChild(od);d.appendChild(fb);c.appendChild(d)})}
+iq();
 </script>
 </body>
 </html>
